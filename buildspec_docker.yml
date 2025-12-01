@@ -13,7 +13,7 @@ phases:
     commands:
       - echo "Extracting AWS Account ID from CODEBUILD_BUILD_ARN..."
       - export ACCOUNT_ID=$(echo $CODEBUILD_BUILD_ARN | cut -f5 -d ':')
-      - export repository_name="jvansan/modern-cicd-with-github-and-aws-codepipeline"  # Set your repository name here
+      - export repository_name="hotel-app"  # Set your repository name here
       - echo "Logging into Amazon ECR..."
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
